@@ -3,7 +3,7 @@
 namespace Thtg88\DbScaffold\Connections;
 
 use Illuminate\Support\Facades\DB;
-use Thtg88\DbScaffold\Exceptions\NotExistException;
+use Thtg88\DbScaffold\Exceptions\ExistException;
 
 class PostgreSql implements Connection
 {
