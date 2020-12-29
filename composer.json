@@ -1,0 +1,58 @@
+{
+    "name": "thtg88/laravel-db-scaffold-commands",
+    "type": "library",
+    "description": "Scaffold a DB with the given Laravel Artisan commands.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Marassi",
+            "email": "admin@marco-marassi.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "illuminate/support": "^8.20",
+        "illuminate/console": "^8.20"
+    },
+    "require-dev": {
+        "brainmaestro/composer-git-hooks": "^2.8",
+        "fakerphp/faker": "^1.13",
+        "friendsofphp/php-cs-fixer": "^2.17",
+        "mockery/mockery": "^1.4",
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.3",
+        "phpstan/phpstan": "^0.12.64",
+        "orchestra/testbench": "^6.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Thtg88\\DbScaffold\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Thtg88\\DbScaffold\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "hooks": {
+            "pre-commit": []
+        },
+        "laravel": {
+            "providers": [
+                "Thtg88\\DbScaffold\\DbScaffoldServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "[[ -d .git ]] && vendor/bin/cghooks add --no-lock || true",
+        "post-update-cmd": "[[ -d .git ]] && vendor/bin/cghooks update || true",
+        "stan": [
+            "vendor/bin/phpstan analyse --memory-limit=512M",
+            "vendor/bin/psalm --no-cache"
+        ],
+        "test": "vendor/bin/phpunit"
+    }
+}
