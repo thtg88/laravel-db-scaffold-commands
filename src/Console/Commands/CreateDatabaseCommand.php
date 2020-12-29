@@ -4,7 +4,7 @@ namespace Thtg88\DbScaffold\Console\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
-use Thtg88\DbScaffold\Exceptions\NotExistException;
+use Thtg88\DbScaffold\Exceptions\ExistException;
 use Thtg88\DbScaffold\Exceptions\NotSupportedException;
 use Thtg88\DbScaffold\Utils;
 
@@ -52,7 +52,7 @@ class CreateDatabaseCommand extends Command
 
         try {
             $connection->createDatabase($db_name);
-        } catch (NotExistException $e) {
+        } catch (ExistException $e) {
             $this->error($e->getMessage());
             return;
         }

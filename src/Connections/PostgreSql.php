@@ -14,7 +14,7 @@ class PostgreSql implements Connection
      *
      * @param string $database
      * @return bool
-     * @throws \Thtg88\DbScaffold\Exceptions\NotExistException If the database does not exist.
+     * @throws \Thtg88\DbScaffold\Exceptions\ExistException If the database already exists.
      */
     public function createDatabase(string $database): bool
     {
@@ -22,8 +22,8 @@ class PostgreSql implements Connection
         // as we can not create the database we can not connect to yet :\
         config(['database.connections.pgsql.database' => 'postgres']);
 
-        if (array_search($database, $this->getDatabases()) === false) {
-            throw new NotExistException($database);
+        if (array_search($database, $this->getDatabases()) !== false) {
+            throw new ExistException($database);
         }
 
         DB::statement('CREATE DATABASE '.$database.';');
