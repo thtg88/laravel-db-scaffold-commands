@@ -3,7 +3,6 @@
 namespace Thtg88\DbScaffold\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
 use Thtg88\DbScaffold\Connections\MySql;
 use Thtg88\DbScaffold\Exceptions\NotConfiguredException;
 use Thtg88\DbScaffold\Exceptions\NotExistException;
@@ -29,22 +28,24 @@ class DropDatabaseCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return void
-     * @throws \Thtg88\DbScaffold\Exceptions\NotSupportedException If database connection not mysql nor pgsql.
+     * @throws \Thtg88\DbScaffold\Exceptions\NotSupportedException  If database connection not mysql nor pgsql.
      * @throws \Thtg88\DbScaffold\Exceptions\NotConfiguredException If database name not configured (null).
+     *
+     * @return void
      */
     public function handle(): void
     {
-        if (! $this->confirm('This is going to delete all your information. ARE YOU SURE?')) {
+        if (!$this->confirm('This is going to delete all your information. ARE YOU SURE?')) {
             $this->info('Exiting.');
+
             return;
         }
 
         // Get default database connection from config
         $default_connection = config('database.default');
         if (
-            ! is_string($default_connection) ||
-            ! array_key_exists($default_connection, Utils::SUPPORTED)
+            !is_string($default_connection) ||
+            !array_key_exists($default_connection, Utils::SUPPORTED)
         ) {
             throw new NotSupportedException($default_connection);
         }
@@ -65,6 +66,7 @@ class DropDatabaseCommand extends Command
             $connection->dropDatabase($db_name);
         } catch (NotExistException $e) {
             $this->error($e->getMessage());
+
             return;
         }
 
