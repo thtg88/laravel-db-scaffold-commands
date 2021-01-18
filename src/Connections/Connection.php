@@ -8,6 +8,7 @@ interface Connection
      * Create a database from the given name.
      *
      * @param string $database
+     *
      * @return bool
      */
     public function createDatabase(string $database): bool;
@@ -16,6 +17,7 @@ interface Connection
      * Drop a database from a given name.
      *
      * @param string $database
+     *
      * @return void
      */
     public function dropDatabase(string $database): void;

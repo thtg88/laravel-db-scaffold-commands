@@ -27,16 +27,17 @@ class CreateDatabaseCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return void
      * @throws \Thtg88\DbScaffold\Exceptions\NotSupportedException If database connection not "mysql" nor "pgsql".
+     *
+     * @return void
      */
     public function handle(): void
     {
         // Get default database connection from config
         $default_connection = config('database.default');
         if (
-            ! is_string($default_connection) ||
-            ! array_key_exists($default_connection, Utils::SUPPORTED)
+            !is_string($default_connection) ||
+            !array_key_exists($default_connection, Utils::SUPPORTED)
         ) {
             throw new NotSupportedException($default_connection);
         }
@@ -54,6 +55,7 @@ class CreateDatabaseCommand extends Command
             $connection->createDatabase($db_name);
         } catch (ExistException $e) {
             $this->error($e->getMessage());
+
             return;
         }
 

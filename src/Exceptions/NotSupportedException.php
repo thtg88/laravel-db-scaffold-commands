@@ -11,6 +11,7 @@ class NotSupportedException extends RuntimeException
      * Create a new exception instance.
      *
      * @param mixed $connection
+     *
      * @return void
      */
     public function __construct($connection)

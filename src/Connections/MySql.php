@@ -42,9 +42,10 @@ class MySql implements Connection
      * and password.
      *
      * @param string $host
-     * @param int $port
+     * @param int    $port
      * @param string $username
      * @param string $password
+     *
      * @return PDO
      */
     private function getPdoConnection(

@@ -10,6 +10,7 @@ class NotExistException extends InvalidArgumentException
      * Create a new exception instance.
      *
      * @param string $db_name
+     *
      * @return void
      */
     public function __construct(string $db_name)

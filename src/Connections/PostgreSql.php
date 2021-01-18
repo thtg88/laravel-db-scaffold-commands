@@ -14,8 +14,10 @@ class PostgreSql implements Connection
      * Create a database from the given name.
      *
      * @param string $database
-     * @return bool
+     *
      * @throws \Thtg88\DbScaffold\Exceptions\ExistException If the database already exists.
+     *
+     * @return bool
      */
     public function createDatabase(string $database): bool
     {
@@ -36,8 +38,10 @@ class PostgreSql implements Connection
      * Drop a database from the given name.
      *
      * @param string $database
-     * @return void
+     *
      * @throws \Thtg88\DbScaffold\Exceptions\NotExistException If the database does not exist.
+     *
+     * @return void
      */
     public function dropDatabase(string $database): void
     {
