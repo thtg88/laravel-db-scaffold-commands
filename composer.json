@@ -13,8 +13,8 @@
         "php": "^7.4|^8.0",
         "ext-json": "*",
         "ext-pdo": "*",
-        "illuminate/support": "^8.20",
-        "illuminate/console": "^8.20"
+        "illuminate/support": "^8.29",
+        "illuminate/console": "^8.29"
     },
     "require-dev": {
         "brainmaestro/composer-git-hooks": "^2.8",
