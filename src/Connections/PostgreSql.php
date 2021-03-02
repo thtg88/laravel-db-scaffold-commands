@@ -25,6 +25,8 @@ class PostgreSql implements Connection
         // as we can not create the database we can not connect to yet :\
         config(['database.connections.pgsql.database' => 'postgres']);
 
+        DB::reconnect();
+
         if (array_search($database, $this->getDatabases()) !== false) {
             throw new ExistException($database);
         }
@@ -48,6 +50,8 @@ class PostgreSql implements Connection
         // We reset default database name to "postgres"
         // as we can not delete the database we are connected to
         config(['database.connections.pgsql.database' => 'postgres']);
+
+        DB::reconnect();
 
         if (array_search($database, $this->getDatabases()) === false) {
             throw new NotExistException($database);
