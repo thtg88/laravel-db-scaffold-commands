@@ -23,7 +23,6 @@
         "mockery/mockery": "^1.4",
         "phpunit/phpunit": "^9.5",
         "vimeo/psalm": "^4.3",
-        "phpstan/phpstan": "^0.12.64",
         "orchestra/testbench": "^6.7"
     },
     "autoload": {
@@ -51,12 +50,9 @@
     "scripts": {
         "post-install-cmd": "[[ -d .git ]] && vendor/bin/cghooks add --no-lock || true",
         "post-update-cmd": "[[ -d .git ]] && vendor/bin/cghooks update || true",
-        "stan": [
-            "vendor/bin/phpstan analyse --memory-limit=512M",
-            "vendor/bin/psalm --no-cache"
-        ],
         "check-style": "vendor/bin/php-cs-fixer fix --using-cache=no --diff --dry-run",
         "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no",
+        "stan": "vendor/bin/psalm --no-cache",
         "test": "vendor/bin/phpunit"
     }
 }
