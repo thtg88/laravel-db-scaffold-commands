@@ -21,11 +21,11 @@ jobs:
 
     - uses: "ramsey/composer-install@v1"
 
-    # - name: Run linting
-    #   run: composer run-script check-style
+    - name: Run linting
+      run: composer run-script check-style
 
     - name: Run static analysis
       run: composer run-script stan
 
-    # - name: Run test suite
-    #   run: ./vendor/bin/phpunit --stop-on-failure
+    - name: Run test suite
+      run: composer run-script test -- --stop-on-failure
