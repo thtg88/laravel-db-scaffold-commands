@@ -27,5 +27,5 @@ jobs:
     - name: Run static analysis
       run: composer run-script stan
 
-    # - name: Run test suite
-    #   run: ./vendor/bin/phpunit --stop-on-failure
+    - name: Run test suite
+      run: composer run-script test -- --stop-on-failure
