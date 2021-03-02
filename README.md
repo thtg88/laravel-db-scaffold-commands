@@ -5,7 +5,7 @@ Create and drop a MySQL or PostgreSQL DB with the given Laravel Artisan commands
 ## Installation
 
 ```bash
-composer require thtg88/laravel-db-scaffold-commands
+composer require --dev thtg88/laravel-db-scaffold-commands
 ```
 
 ## Usage
