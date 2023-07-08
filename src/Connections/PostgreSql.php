@@ -8,7 +8,7 @@ use Thtg88\DbScaffold\Exceptions\NotExistException;
 
 class PostgreSql implements Connection
 {
-    const NAME = 'PostgreSQL';
+    public const NAME = 'PostgreSQL';
 
     /**
      * Create a database from the given name.

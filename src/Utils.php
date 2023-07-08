@@ -7,7 +7,7 @@ use Thtg88\DbScaffold\Connections\PostgreSql;
 
 final class Utils
 {
-    const SUPPORTED = [
+    public const SUPPORTED = [
         'mysql' => MySql::class,
         'pgsql' => PostgreSql::class,
     ];

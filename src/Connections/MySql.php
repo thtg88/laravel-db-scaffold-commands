@@ -7,7 +7,7 @@ use PDO;
 
 class MySql implements Connection
 {
-    const NAME = 'MySQL';
+    public const NAME = 'MySQL';
 
     public function createDatabase(string $database): bool
     {
