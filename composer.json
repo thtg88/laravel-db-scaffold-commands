@@ -35,11 +35,6 @@
         }
     },
     "extra": {
-        "hooks": {
-            "pre-commit": [
-                "vendor/bin/php-cs-fixer fix --using-cache=no --diff --dry-run"
-            ]
-        },
         "laravel": {
             "providers": [
                 "Thtg88\\DbScaffold\\DbScaffoldServiceProvider"
@@ -47,8 +42,6 @@
         }
     },
     "scripts": {
-        "post-install-cmd": "[[ -d .git ]] && vendor/bin/cghooks add --no-lock || true",
-        "post-update-cmd": "[[ -d .git ]] && vendor/bin/cghooks update || true",
         "ci": [
             "@check-style",
             "@stan",
