@@ -3,7 +3,6 @@
 namespace Thtg88\DbScaffold\Console\Commands;
 
 use Illuminate\Console\Command;
-use Thtg88\DbScaffold\Connections\MySql;
 use Thtg88\DbScaffold\Exceptions\NotConfiguredException;
 use Thtg88\DbScaffold\Exceptions\NotExistException;
 use Thtg88\DbScaffold\Exceptions\NotSupportedException;
