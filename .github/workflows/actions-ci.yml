@@ -1,4 +1,4 @@
-name: GitPack CI
+name: Laravel DB Scaffold Commands CI
 
 on:
   push:
