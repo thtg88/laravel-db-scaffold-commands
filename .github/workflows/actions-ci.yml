@@ -9,7 +9,7 @@ jobs:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     strategy:
       matrix:
-        php-versions: ['8.0', '8.1', '8.2']
+        php-versions: ['8.1', '8.2']
 
     steps:
     - uses: actions/checkout@v2
