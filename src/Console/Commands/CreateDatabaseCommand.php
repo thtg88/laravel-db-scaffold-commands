@@ -67,6 +67,7 @@ class CreateDatabaseCommand extends Command
      *
      * @return array
      */
+    #[\Override]
     protected function getArguments(): array
     {
         return [

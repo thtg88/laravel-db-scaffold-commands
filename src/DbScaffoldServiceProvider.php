@@ -32,6 +32,7 @@ class DbScaffoldServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    #[\Override]
     public function register(): void
     {
         // $this->mergeConfigFrom(__DIR__.'/../config/db-scaffold.php', 'db-scaffold');

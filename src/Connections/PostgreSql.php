@@ -19,6 +19,7 @@ class PostgreSql implements Connection
      *
      * @return bool
      */
+    #[\Override]
     public function createDatabase(string $database): bool
     {
         // We reset default database name to "postgres"
@@ -45,6 +46,7 @@ class PostgreSql implements Connection
      *
      * @return void
      */
+    #[\Override]
     public function dropDatabase(string $database): void
     {
         // We reset default database name to "postgres"
@@ -60,6 +62,7 @@ class PostgreSql implements Connection
         DB::statement('DROP DATABASE '.$database.';');
     }
 
+    #[\Override]
     public function getDatabases(): array
     {
         return array_map(static function ($database): string {

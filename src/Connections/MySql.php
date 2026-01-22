@@ -9,6 +9,7 @@ class MySql implements Connection
 {
     public const NAME = 'MySQL';
 
+    #[\Override]
     public function createDatabase(string $database): bool
     {
         $this->getPDOConnection(
@@ -25,11 +26,13 @@ class MySql implements Connection
         return true;
     }
 
+    #[\Override]
     public function dropDatabase(string $database): void
     {
         DB::statement('DROP DATABASE '.$database.';');
     }
 
+    #[\Override]
     public function getDatabases(): array
     {
         return array_map(static function ($database): string {

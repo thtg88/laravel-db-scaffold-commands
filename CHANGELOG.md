@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/) (or at least it tries to).
 
+## [0.7.0] - 2026-01-18
+
+### Added
+
+- Support for Laravel 12.x
+
+### Removed
+
+- Support for Laravel 11.x
+
 ## [0.6.0] - 2026-01-18
 
 ### Added
