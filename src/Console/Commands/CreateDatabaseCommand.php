@@ -43,7 +43,7 @@ class CreateDatabaseCommand extends Command
         }
 
         // Get database name from arguments
-        $db_name = $this->argument('name');
+        $db_name = (string) $this->argument('name');
 
         $connection_classname = Utils::SUPPORTED[$default_connection];
 
